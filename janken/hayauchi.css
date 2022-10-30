@@ -1,0 +1,29 @@
+#main {
+    width: 716px;
+    height: 370px;
+    margin: auto;
+    padding: 5px 5px;
+    position: relative;
+    background-image: url(/janken/img/city.jpg);
+    background-size: cover;
+    color: aliceblue;
+}
+
+#player-icon {
+    position: absolute;
+    left: 150px;
+    top: 220px;
+}
+
+#com-icon {
+    position: absolute;
+    right: 140px;
+    top: 200px;
+}
+
+#time-to-click {
+    position: absolute;
+    left: 40%;
+    top: 100px;
+    display: none;
+}

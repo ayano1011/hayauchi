@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ジャンケン</title>
+    <link rel="stylesheet" href="hayauchi.css">
+</head>
+
+<body>
+    <header>
+
+    </header>
+    <main>
+        <div id="main">
+            <div id="start-btn">start</div>
+            <div id="player-icon">
+                <img src="img/kousenju.png" alt="player" width="120px">
+            </div>
+            <div id="time-to-click">
+                <img src="img/fukidashi.png" alt="time" width="200px">
+            </div>
+            <div id="com-icon">
+                <img src="img/animal_neko.png" alt="com" width="100px">
+
+            </div>
+            <div id="result"></div>
+
+        </div>
+    </main>
+
+    <!--以下スクリプト-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        // 3~8の数を算出
+        $("#start-btn").on("click", function () {
+            const randomNumber1 = Math.floor(Math.random() * 5) + 3
+            console.log(randomNumber1)
+
+            // ：3の場合、2秒後に撃つ指示
+            if (randomNumber1 === 3) {
+                setTimeout(Msg, 2000);
+                function Msg() {
+                    $("#time-to-click").css("display", "block")
+                }
+                $(function () {
+                    $("#com-icon").click(function () {
+                        $(this).data("click", true);
+                    });
+                });
+
+                // 撃つ指示が出てから１秒以内に撃てたら勝ち
+                setTimeout(function () {
+                    if (!$("#com-icon").data("click")) {
+                        $("#result").text("負け");
+                    }
+                    else {
+                        $("#result").text("勝ち");
+                    }
+                }, 3000);
+
+                // クリック後、！！は消える
+                $("#com-icon").on("click", function () {
+                    $("#time-to-click").remove();
+                });
+
+            }
+            // ：４の場合,3秒後に撃つ指示
+            if (randomNumber1 === 4) {
+                setTimeout(Msg, 3000);
+                function Msg() {
+                    $("#time-to-click").css("display", "block")
+
+                }
+                $(function () {
+                    $("#com-icon").click(function () {
+                        $(this).data("click", true);
+                    });
+                });
+
+                // 撃つ指示が出てから１秒以内に撃てたら勝ち
+                setTimeout(function () {
+                    if (!$("#com-icon").data("click")) {
+                        $("#result").text("負け");
+                    }
+                    else {
+                        $("#result").text("勝ち");
+                    }
+                }, 4000);
+
+                // クリック後、！！は消える
+                $("#com-icon").on("click", function () {
+                    $("#time-to-click").remove();
+                });
+
+            }
+
+            // ：5の場合、4秒後に撃つ指示
+            if (randomNumber1 === 5) {
+                setTimeout(Msg, 4000);
+                function Msg() {
+                    $("#time-to-click").css("display", "block")
+                }
+                $(function () {
+                    $("#com-icon").click(function () {
+                        $(this).data("click", true);
+                    });
+                });
+
+                // 撃つ指示が出てから１秒以内に撃てたら勝ち
+                setTimeout(function () {
+                    if (!$("#com-icon").data("click")) {
+                        $("#result").text("負け");
+                    }
+                    else {
+                        $("#result").text("勝ち");
+                    }
+                }, 5000);
+
+                // クリック後、！！は消える
+                $("#com-icon").on("click", function () {
+                    $("#time-to-click").remove();
+                });
+
+            }
+            // ：6の場合、5秒後に撃つ指示
+            if (randomNumber1 === 6) {
+                setTimeout(Msg, 5000);
+                function Msg() {
+                    $("#time-to-click").css("display", "block")
+                }
+                $(function () {
+                    $("#com-icon").click(function () {
+                        $(this).data("click", true);
+                    });
+                });
+
+                // 撃つ指示が出てから１秒以内に撃てたら勝ち
+                setTimeout(function () {
+                    if (!$("#com-icon").data("click")) {
+                        $("#result").text("負け");
+                    }
+                    else {
+                        $("#result").text("勝ち");
+                    }
+                }, 6000);
+
+                // クリック後、！は消える
+                $("#com-icon").on("click", function () {
+                    $("#time-to-click").remove();
+                });
+
+            }
+            // ：7の場合、6秒後に撃つ指示
+            if (randomNumber1 === 7) {
+                setTimeout(Msg, 6000);
+                function Msg() {
+                    $("#time-to-click").css("display", "block")
+
+                }
+                $(function () {
+                    $("#com-icon").click(function () {
+                        $(this).data("click", true);
+                    });
+                });
+
+                // 撃つ指示が出てから１秒以内に撃てたら勝ち
+                setTimeout(function () {
+                    if (!$("#com-icon").data("click")) {
+                        $("#result").text("負け");
+                    }
+                    else {
+                        $("#result").text("勝ち");
+                    }
+                }, 7000);
+
+                // クリック後、！！は消える
+                $("#com-icon").on("click", function () {
+                    $("#time-to-click").remove();
+                });
+
+            }
+            // ：8の場合、7秒後に撃つ指示
+            if (randomNumber1 === 8) {
+                setTimeout(Msg, 7000);
+                function Msg() {
+                    $("#time-to-click").css("display", "block")
+
+                }
+                $(function () {
+                    $("#com-icon").click(function () {
+                        $(this).data("click", true);
+                    });
+                });
+
+                // 撃つ指示が出てから１秒以内に撃てたら勝ち
+                setTimeout(function () {
+                    if (!$("#com-icon").data("click")) {
+                        $("#result").text("負け");
+                    }
+                    else {
+                        $("#result").text("勝ち");
+                    }
+                }, 8000);
+
+                // クリック後、！！は消える
+                $("#com-icon").on("click", function () {
+                    $("#time-to-click").remove();
+                });
+
+            }
+
+
+
+
+
+        }
+        )
+
+    </script>
+</body>
+
+</html>
