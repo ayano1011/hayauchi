@@ -138,3 +138,24 @@
     width: 340px;
 
 }
+
+/* リロードボタン */
+
+#reload-victory img {
+    background-color: orange;
+    position: absolute;
+    right: 20px;
+    top: 320px;
+    border-radius: 10px;
+
+}
+
+#reload-failed img {
+    background-color: slategray;
+    position: absolute;
+    right: 20px;
+    top: 320px;
+    border-radius: 10px;
+    width: 40px;
+
+}
