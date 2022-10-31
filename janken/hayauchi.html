@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ジャンケン</title>
+    <title>居合切りゲーム
+    </title>
     <link rel="stylesheet" href="hayauchi.css">
 </head>
 
@@ -15,21 +16,35 @@
     </header>
     <main>
         <div id="main">
-            <div id="menu">
-                <p>早撃ちゲーム</p>
+            <div id="menu" style="z-index: 100">
+                <img src="img/title-img.001.png">
                 <button id="select-btn">START</button>
-                <p>click to start</p>
+                <p id="select-btn-text">くりっく「すたーと」ぼたん</p>
+                <audio id="select_audio">
+                    <source src="audio/和太鼓でドン.mp3" type="audio/mp3">
+                </audio>
             </div>
-            <div id="start-btn">Ready?</div>
+            <div id="start-btn-wrapper">
+                <p id="how-to-play">「❗️」マークがあらわれたら、<br>
+                    すかさず敵をクリックしよう<br>▷</p>
+                <p id="com-exp">敵(忍者いぬ)<br>↓</p>
+                <audio id="exp_audio">
+                    <source src="audio/和太鼓でドドン.mp3" type="audio/mp3">
+                </audio>
+
+
+                <button id="start-btn">わかった
+                </button>
+            </div>
 
             <div id="player-icon">
-                <img src="img/kousenju.png" alt="player" width="120px">
+                <img src="img/samurai_woman.png" alt="player" width="120px">
             </div>
             <div id="time-to-click">
                 <img src="img/fukidashi.png" alt="time" width="200px">
             </div>
             <div id="com-icon">
-                <img src="img/animal_neko.png" alt="com" width="100px">
+                <img src="img/ninjadog.png" alt="com" width="100px">
 
             </div>
             <div id="result"></div>
@@ -38,18 +53,27 @@
     </main>
 
     <!--以下スクリプト-->
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
-
+        //タイトル画面
         $("#select-btn").click(function () {
-            $("#menu").hide(2000);
+            $("#menu").hide(2000), document.getElementById('select_audio').currentTime = 0;
+            //連続クリックに対応
+            document.getElementById('select_audio').play();
+            //クリックしたら音を再生
         })
 
-
-        // 3~8の数を算出
+        // ゲーム画面
+        // 3~8の乱数を算出
         $("#start-btn").on("click", function () {
             const randomNumber1 = Math.floor(Math.random() * 5) + 3
-            console.log(randomNumber1)
+            // ルール説明部分の「わかった」ボタンを押すとカウント開始
+            // クリックしたら「わかった」ボタンは消える
+            console.log(randomNumber1), $("#start-btn-wrapper").hide(1000), document.getElementById('exp_audio').currentTime = 0;
+            //連続クリックに対応
+            document.getElementById('exp_audio').play();
+            //クリックしたら音を再生
 
             // ：3の場合、2秒後に撃つ指示
             if (randomNumber1 === 3) {
