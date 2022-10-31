@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>居合切りゲーム
+    <title>いあいぎりゲーム
     </title>
     <link rel="stylesheet" href="hayauchi.css">
 </head>
@@ -18,7 +18,9 @@
             <div id="menu" style="z-index: 100">
                 <img src="img/title-img.001.png">
                 <button id="select-btn">START</button>
-                <p id="select-btn-text">くりっく「すたーと」ぼたん</p>
+                <p id="select-btn-text">
+                    <img src="img/start-button-text.001.png">
+                </p>
                 <audio id="select_audio">
                     <source src="audio/和太鼓でドン.mp3" type="audio/mp3">
                 </audio>
@@ -93,7 +95,7 @@
 
             // ：3の場合、2秒後に撃つ指示
             if (randomNumber1 === 3) {
-                setTimeout(Msg, 2000);
+                setTimeout(Msg, 2500);
                 function Msg() {
                     $("#time-to-click").css("display", "block"), document.getElementById('fukidashi_audio').currentTime = 0;
                     //連続クリックに対応

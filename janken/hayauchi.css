@@ -1,3 +1,4 @@
+/* メインゲーム画面 */
 #main {
     width: 716px;
     height: 370px;
@@ -20,14 +21,15 @@
     background-size: cover;
 }
 
+/* ゲームタイトル画像 */
 #menu img {
     width: 350px;
     position: absolute;
     left: 165px;
     top: 30px;
-
 }
 
+/* ルール説明 */
 #how-to-play {
     font-size: 17px;
     text-align: center;
@@ -43,12 +45,14 @@
 
 }
 
+/* メイン画面「わかった」ボタン  */
 #start-btn {
     position: absolute;
     left: 360px;
     top: 145px;
 }
 
+/* メイン画面　忍者いぬの説明 */
 #com-exp {
     font-size: 14px;
     font: bold;
@@ -64,21 +68,21 @@
 
 }
 
+/* タイトル画面「スタート」ボタン */
 #select-btn {
     font-size: 20px;
     position: absolute;
     left: 300px;
-    top: 280px;
+    top: 220px;
     width: 80px;
     height: 60px;
 }
 
-#select-btn-text {
-    color: black;
-    font-size: 16px;
+/* タイトル画面「くりっくすたーとぼたん」 */
+#select-btn-text img {
     position: absolute;
-    left: 240px;
-    top: 330px;
+    left: 170px;
+    top: 150px;
 }
 
 #player-icon {
