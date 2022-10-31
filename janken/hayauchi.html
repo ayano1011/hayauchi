@@ -15,7 +15,13 @@
     </header>
     <main>
         <div id="main">
-            <div id="start-btn">start</div>
+            <div id="menu">
+                <p>早撃ちゲーム</p>
+                <button id="select-btn">START</button>
+                <p>click to start</p>
+            </div>
+            <div id="start-btn">Ready?</div>
+
             <div id="player-icon">
                 <img src="img/kousenju.png" alt="player" width="120px">
             </div>
@@ -34,6 +40,12 @@
     <!--以下スクリプト-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
+
+        $("#select-btn").click(function () {
+            $("#menu").hide(2000);
+        })
+
+
         // 3~8の数を算出
         $("#start-btn").on("click", function () {
             const randomNumber1 = Math.floor(Math.random() * 5) + 3
