@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>居合切りゲーム
     </title>
@@ -42,12 +41,28 @@
             </div>
             <div id="time-to-click">
                 <img src="img/fukidashi.png" alt="time" width="200px">
+                <audio id="fukidashi_audio">
+                    <source src="audio/ビシッとツッコミ2.mp3" type="audio/mp3">
+                </audio>
+                <audio id="defeat_audio">
+                    <source src="audio/ビシッとツッコミ3.mp3" type="audio/mp3">
+                </audio>
+
+
             </div>
             <div id="com-icon">
                 <img src="img/ninjadog.png" alt="com" width="100px">
 
             </div>
-            <div id="result"></div>
+            <div id="result">
+
+                <div id="victory" style="display: none;" style="z-index: 120">
+                    <img src="img/win.png" alt="victory" width="500px">
+                </div>
+                <div id="failed" style="display: none;" style="z-index: 120">
+                    <img src="img/lose.001.png" alt="failed" width="400px">
+                </div>
+            </div>
 
         </div>
     </main>
@@ -68,6 +83,7 @@
         // 3~8の乱数を算出
         $("#start-btn").on("click", function () {
             const randomNumber1 = Math.floor(Math.random() * 5) + 3
+
             // ルール説明部分の「わかった」ボタンを押すとカウント開始
             // クリックしたら「わかった」ボタンは消える
             console.log(randomNumber1), $("#start-btn-wrapper").hide(1000), document.getElementById('exp_audio').currentTime = 0;
@@ -79,7 +95,9 @@
             if (randomNumber1 === 3) {
                 setTimeout(Msg, 2000);
                 function Msg() {
-                    $("#time-to-click").css("display", "block")
+                    $("#time-to-click").css("display", "block"), document.getElementById('fukidashi_audio').currentTime = 0;
+                    //連続クリックに対応
+                    document.getElementById('fukidashi_audio').play();
                 }
                 $(function () {
                     $("#com-icon").click(function () {
@@ -90,14 +108,25 @@
                 // 撃つ指示が出てから１秒以内に撃てたら勝ち
                 setTimeout(function () {
                     if (!$("#com-icon").data("click")) {
-                        $("#result").text("負け");
+
+                        $("#failed").css("display", "block");
+
                     }
                     else {
-                        $("#result").text("勝ち");
+                        function audio() {
+                            document.getElementById('defeat_audio').currentTime = 0;
+                            //連続クリックに対応
+                            document.getElementById('defeat_audio').play();
+                        }
+                        //クリックしたら音を再生
+                        setTimeout(win, 400);
+                        function win() {
+                            $("#victory").css("display", "block");
+                        }
                     }
                 }, 3000);
 
-                // クリック後、！！は消える
+                // クリック後、！は消える
                 $("#com-icon").on("click", function () {
                     $("#time-to-click").remove();
                 });
@@ -107,7 +136,9 @@
             if (randomNumber1 === 4) {
                 setTimeout(Msg, 3000);
                 function Msg() {
-                    $("#time-to-click").css("display", "block")
+                    $("#time-to-click").css("display", "block"), document.getElementById('fukidashi_audio').currentTime = 0;
+                    //連続クリックに対応
+                    document.getElementById('fukidashi_audio').play();
 
                 }
                 $(function () {
@@ -119,10 +150,21 @@
                 // 撃つ指示が出てから１秒以内に撃てたら勝ち
                 setTimeout(function () {
                     if (!$("#com-icon").data("click")) {
-                        $("#result").text("負け");
+
+                        $("#failed").css("display", "block");
+
                     }
                     else {
-                        $("#result").text("勝ち");
+                        function audio() {
+                            document.getElementById('defeat_audio').currentTime = 0;
+                            //連続クリックに対応
+                            document.getElementById('defeat_audio').play();
+                        }
+                        //クリックしたら音を再生
+                        setTimeout(win, 400);
+                        function win() {
+                            $("#victory").css("display", "block");
+                        }
                     }
                 }, 4000);
 
@@ -137,7 +179,9 @@
             if (randomNumber1 === 5) {
                 setTimeout(Msg, 4000);
                 function Msg() {
-                    $("#time-to-click").css("display", "block")
+                    $("#time-to-click").css("display", "block"), document.getElementById('fukidashi_audio').currentTime = 0;
+                    //連続クリックに対応
+                    document.getElementById('fukidashi_audio').play();
                 }
                 $(function () {
                     $("#com-icon").click(function () {
@@ -148,10 +192,20 @@
                 // 撃つ指示が出てから１秒以内に撃てたら勝ち
                 setTimeout(function () {
                     if (!$("#com-icon").data("click")) {
-                        $("#result").text("負け");
+                        $("#failed").css("display", "block");
+
                     }
                     else {
-                        $("#result").text("勝ち");
+                        function audio() {
+                            document.getElementById('defeat_audio').currentTime = 0;
+                            //連続クリックに対応
+                            document.getElementById('defeat_audio').play();
+                        }
+                        //クリックしたら音を再生
+                        setTimeout(win, 400);
+                        function win() {
+                            $("#victory").css("display", "block");
+                        }
                     }
                 }, 5000);
 
@@ -165,8 +219,13 @@
             if (randomNumber1 === 6) {
                 setTimeout(Msg, 5000);
                 function Msg() {
-                    $("#time-to-click").css("display", "block")
+                    $("#time-to-click").css("display", "block"),
+
+                        document.getElementById('fukidashi_audio').currentTime = 0;
+                    //連続クリックに対応
+                    document.getElementById('fukidashi_audio').play(); z
                 }
+                //クリックしたら音を再生
                 $(function () {
                     $("#com-icon").click(function () {
                         $(this).data("click", true);
@@ -176,10 +235,21 @@
                 // 撃つ指示が出てから１秒以内に撃てたら勝ち
                 setTimeout(function () {
                     if (!$("#com-icon").data("click")) {
-                        $("#result").text("負け");
+
+                        $("#failed").css("display", "block");
+
                     }
                     else {
-                        $("#result").text("勝ち");
+                        function audio() {
+                            document.getElementById('defeat_audio').currentTime = 0;
+                            //連続クリックに対応
+                            document.getElementById('defeat_audio').play();
+                        }
+                        //クリックしたら音を再生
+                        setTimeout(win, 400);
+                        function win() {
+                            $("#victory").css("display", "block");
+                        };
                     }
                 }, 6000);
 
@@ -193,22 +263,39 @@
             if (randomNumber1 === 7) {
                 setTimeout(Msg, 6000);
                 function Msg() {
-                    $("#time-to-click").css("display", "block")
+                    $("#time-to-click").css("display", "block"), document.getElementById('fukidashi_audio').currentTime = 0;
+                    //連続クリックに対応
+                    document.getElementById('fukidashi_audio').play();
 
                 }
                 $(function () {
-                    $("#com-icon").click(function () {
-                        $(this).data("click", true);
-                    });
+                    document.getElementById('defeat_audio').currentTime = 0;
+                    //連続クリックに対応
+                    document.getElementById('defeat_audio').play(),
+                        //クリックしたら音を再生
+                        $("#com-icon").click(function () {
+                            $(this).data("click", true);
+                        });
                 });
 
                 // 撃つ指示が出てから１秒以内に撃てたら勝ち
                 setTimeout(function () {
                     if (!$("#com-icon").data("click")) {
-                        $("#result").text("負け");
+
+                        $("#failed").css("display", "block");
+
                     }
                     else {
-                        $("#result").text("勝ち");
+                        function audio() {
+                            document.getElementById('defeat_audio').currentTime = 0;
+                            //連続クリックに対応
+                            document.getElementById('defeat_audio').play();
+                        }
+                        //クリックしたら音を再生
+                        setTimeout(win, 400);
+                        function win() {
+                            $("#victory").css("display", "block");
+                        }
                     }
                 }, 7000);
 
@@ -222,7 +309,9 @@
             if (randomNumber1 === 8) {
                 setTimeout(Msg, 7000);
                 function Msg() {
-                    $("#time-to-click").css("display", "block")
+                    $("#time-to-click").css("display", "block"), document.getElementById('fukidashi_audio').currentTime = 0;
+                    //連続クリックに対応
+                    document.getElementById('fukidashi_audio').play();
 
                 }
                 $(function () {
@@ -234,10 +323,21 @@
                 // 撃つ指示が出てから１秒以内に撃てたら勝ち
                 setTimeout(function () {
                     if (!$("#com-icon").data("click")) {
-                        $("#result").text("負け");
+
+                        $("#failed").css("display", "block");
+
                     }
                     else {
-                        $("#result").text("勝ち");
+                        function audio() {
+                            document.getElementById('defeat_audio').currentTime = 0;
+                            //連続クリックに対応
+                            document.getElementById('defeat_audio').play();
+                        }
+                        //クリックしたら音を再生
+                        setTimeout(win, 400);
+                        function win() {
+                            $("#victory").css("display", "block");
+                        }
                     }
                 }, 8000);
 

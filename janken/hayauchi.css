@@ -9,6 +9,7 @@
     color: aliceblue;
 }
 
+/* トップ画面 */
 #menu {
     width: 706px;
     height: 360px;
@@ -97,4 +98,39 @@
     left: 40%;
     top: 100px;
     display: none;
+}
+
+/* ゲームクリア画面 */
+#victory {
+    background-color: rgba(105, 105, 105, 0.55);
+    width: 716px;
+    height: 370px;
+    margin: auto;
+    position: relative;
+
+}
+
+#victory img {
+    position: absolute;
+    right: 115px;
+    top: 30px;
+
+}
+
+/* ゲームオーバー画面 */
+#failed {
+    background-color: rgba(105, 105, 105, 0.55);
+    width: 716px;
+    height: 370px;
+    margin: auto;
+    position: relative;
+
+}
+
+#failed img {
+    position: absolute;
+    right: 210px;
+    top: 20px;
+    width: 340px;
+
 }
