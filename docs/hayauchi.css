@@ -5,7 +5,7 @@
     margin: auto;
     padding: 5px 5px;
     position: relative;
-    background-image: url(/janken/img/back-img.jpg);
+    background-image: url(/docs/img/back-img.png);
     background-size: cover;
     color: aliceblue;
 }
