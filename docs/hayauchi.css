@@ -5,7 +5,7 @@
     margin: auto;
     padding: 5px 5px;
     position: relative;
-    background-image: url(/docs/img/back-img.png);
+    background-image: url(https://github.com/ayano1011/hayauchi/blob/main/docs/img/back-img.png?raw=true);
     background-size: cover;
     color: aliceblue;
 }
